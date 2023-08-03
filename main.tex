@@ -1,0 +1,86 @@
+\documentclass[a4paper, 11pt, twoside]{report}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr, lastpage}
+\usepackage{float}
+\usepackage{graphicx}
+\linespread{1.15}
+\usepackage{parskip}
+\setlength{\parskip}{1em}
+\hyphenchar\font=-1
+\usepackage{multicol}
+\usepackage{array,ragged2e}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\setcounter{secnumdepth}{-1}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{svg}
+\usepackage{appendix}
+\usepackage{siunitx}
+\usepackage{titlesec}
+\counterwithout{figure}{chapter}
+\usepackage{etoolbox}
+\usepackage{adjustbox}
+
+\usepackage{afterpage}
+\usepackage{pdflscape}
+
+
+\titleformat{\chapter}[display]
+    {\vspace*{-3cm}\normalfont\huge\bfseries}
+    {}{20pt}{\huge}
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+\usepackage[style=authoryear-ibid]{biblatex}
+\setlength\bibitemsep{\baselineskip}
+\addbibresource{ref.bib}
+
+\pagestyle{fancy}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+% \setlength{\headheight}{41.68335pt}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+\lhead{H446/04}
+\chead{Camera Auction Website}
+\rhead{A Level Computer Science}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
+
+\nocite{*}
+
+\begin{document}
+
+\begin{titlepage}
+    \thispagestyle{empty}
+    \centering
+    \vspace*{3cm}
+    \Huge{H446/04 Programming Project:} \\ [0.25cm] 
+    \Huge{Camera Auction Website} \\
+    \vspace{2cm}
+    \huge{Luke Mitchell} \\
+    \vspace{0.5cm}
+    \Large{Candidate Number: 0146}
+\end{titlepage}
+
+
+\tableofcontents
+
+\include{ch1_analysis/analysis}
+\include{ch2_design/design}
+% \include{ch3_developing/proto1/proto1}
+% \include{ch3_developing/proto2/proto2}
+% \include{ch3_developing/proto3/proto3}
+% \include{ch4_testing_for_eval/alphatesting}
+% \include{ch4_testing_for_eval/betatesting}
+% \include{ch5_evaluation/evaluation}
+% \include{ch6_appendix/appendix}
+
+
+\listoffigures
+\newpage
+\listoftables
+\newpage
+\printbibliography[title=Bibliography]
+\end{document}
